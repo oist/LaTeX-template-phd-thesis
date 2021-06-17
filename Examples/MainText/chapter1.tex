@@ -1,0 +1,467 @@
+
+\chapter{Multipartite Entanglement Criterion from Uncertainty Relations} \label{ch-1}
+
+\begin{figure}[h]
+\captionsetup{labelformat=empty}
+\hspace{\stretch{1}} \includegraphics[width=0.75\textwidth]{xkcd/xkcd2.png}
+\caption*{\hspace{\stretch{1}}  Randall Munroe, \emph{A Bunch of Rocks} (part 2 of 9), \texttt{xkcd.com/505/} }
+\end{figure}
+
+
+In the past few years, many criteria detecting entanglement in bipartite and multipartite systems have been developed~\cite{Min05,Bra05,Pat00}. The Peres-Horodecki positive partial transpose (PPT) criterion~\cite{Per96} has played a crucial role in the field and provides, in some cases, necessary and sufficient conditions to entanglement. That criteria is formulated in terms of the density operator and any practical application involves state tomography. Other criteria have been proposed so they could be tested experimentally in a direct manner, as the Bell inequalities~\cite{Bel64, Dur01} or the entanglement witnesses~\cite{Guh02}. More recently, criteria based on variance measurements have been studied for continuous and discrete variable systems~\cite{Sim00,Dua00,Hof03,Hil06,Kly07,Dur05,Gio03,Shc05,Guh04, Aga05, Nha06, Nha07,Son08}.
+
+In~\cite{Aga05} the Heisenberg relation has been used along with the partial transpose operation to obtain a criterion detecting entanglement condition in bipartite non-gaussian states. That idea was generalized in~\cite{Nha07,Son08} with use of the Schr\"odinger-Robertson relation instead of the Heisenberg inequality.  In this chapter, we generalize completely those concepts and prove that the Schr\"odinger-Robertson type inequality is able to detect entanglement in any pure state of bipartite and tripartite systems. Experimentally, it can be realized by measuring mean values and variances of different observables on a wide range of systems.
+
+We start the chapter by introducing the Schr\"odinger-Robertson inequality and the PPT criterion in Sec.~\ref{sec-SRI} and~\ref{sec-PPT}. In Sec.~\ref{sec-SRPT} we introduce our Schr\"odinger-Robertson partial transpose (SRPT) criterion and study its validity with a few properties of the partial transpose. We find that  all observables are not suitable and we yield the general condition they must satisfy to be eligible. For $2\times 2$ systems, we explicitly give their general form. Finally, we show that the SRPT criterion is necessary and sufficient in the case of bipartite pure states.
+
+In Sec.~\ref{sec-SPRTbip}, we study various different applications of the SRPT in the bipartite case, including angular momentum states of harmonic oscillators, cat states and multiphoton polarization states. In Sec.~\ref{sec-SRPTtri}, we prove that our criterion is necessary and sufficient in the case of pure tripartite qubit states. Finally, in Sec.~\ref{sec-SRPTmix} we apply the criterion to mixed states and we show that the inequality detects entanglement of bipartite Werner states better than the Bell inequalities~\cite{Bel64} and also leads to a good characterization of multipartite Werner states.
+
+
+\section{Schr\"odinger-Robertson Inequality} \label{sec-SRI}
+
+One of the great results of quantum mechanics is Heisenberg uncertainty principle, actually not a principle at all since it can be demonstrated. That principle states that one cannot measure simultaneously certain pairs of physical quantities with an arbitrarily large precision. More precisely, that uncertainty occurs when the observables corresponding to the physical quantities do not \emph{commute}.
+
+The Heisenberg uncertainty principle can actually be derived from a more general type of inequality, the Schr\"odinger-Robertson Inequality~\cite{Sch30}. Let us consider two observables $A$ and $B$ and a general physical state $\rho$, expressed in the matrix density formalism. We define the complex quantity
+\[ z=\tr{\rho A B}= \langle AB \rangle.\]
+
+We find that
+  \begin{eqnarray}
+ 2i\, \mbox{Im}(z)  &=&\mean{ AB }- \mean{ BA } = \mean{ [A,B] },\\
+2\,\mbox{Re}(z)  &=&\mean{ AB }+ \mean{ BA } = \mean{ \{A,B\} },
+ \end{eqnarray}
+where $[A,B]\equiv AB-BA$ and $\{A,B\}\equiv AB+BA$ are respectively the commutator and anticommutator of $A$ and $B$. We therefore have
+\[ |\mean{ [A,B] }|^2 + |\mean{ \{A,B\} }|^2 = 4 | \mean{ AB }|^2 . \label{eq-z} \]
+
+Here, we apply Cauchy-Schwarz inequality and get
+\[  | \mean{ AB }|^2 \le \mean{ A^2 } \mean{ B^2 },\]
+which combined with Eq. (\ref{eq-z}) gives
+ \[ |\mean{ [A,B] }|^2 + |\mean{ \{A,B\} }|^2 \le 4 \mean{A^2} \mean{B^2}.\label{eq-z2}\]
+ 
+ Let us define some new observables $C= A-\mean{A}$ and $D = B -\mean{B} $. Clearly, we have  
+ \bea
+ \mean{[C,D]} &=&\mean{[A,B]}, \\
+ \mean{\{C,D\}} &=& \mean{\{ A,B \}} -2 \mean A \mean B.
+ \eea  
+ Since we can write Eq. (\ref{eq-z2}) for the observables $C$ and $D$ with the \emph{variance} 
+ \[ (\Delta A )^2 =   \mean{ (A - \mean{A})^2 } = \mean{C^2},\]
+  we can finally write the Schr\"odinger-Robertson Inequality:
+ \[ (\Delta A)^2 (\Delta B)^2 \ge \frac{1}{4}| \mean{[A,B]}|^2 + \frac{1}{4}| \mean{\{A,B\}} - 2 \mean A \mean B|^2 . \label{eq-SRI}\]
+ 
+ This result is a remarkable and very general feature of quantum mechanics, which is completely inherent to the physical state being investigated and not at all related to the ability of a researcher to measure the quantities. 
+
+The Heisenberg inequality is simply obtained by ignoring  the second term on the right-hand side of (\ref{eq-SRI}), which only accentuates the inequality.
+
+\section{Positive Partial Transpose Criterion} \label{sec-PPT}
+
+In 1996, Asher Peres~\cite{Per96} published a criterion able to characterize the entanglement in bipartite systems, either pure or mixed. Let us consider a separable system acting in $\mathcal{H}$ composed of two subsystems described by the individual density matrices $\rho^1_i$ et $\rho^2_i$. The state of the system is in general 
+\[ \rho = \sum_i p_i \, \rho^1_i \otimes \rho^2_i, \label{eq-mixed} \]
+with $p_i \ge 0, \forall i$ et $\sum_i p_i=1$. The individual matrix elements will be described as 
+\[  \rho_{m\mu,n\nu}=\prodsc{m \mu}{\rho}{n \nu} = \sum_i p_i \,\left(\rho^1_i \right)_{mn} \left(\rho^2_i\right)_{\mu\nu},  \]
+where the states described by latin indices are the basis states of the first subsystem and the ones described by the greek indices are those of the second subsystem, which may have a different dimension. Let us form a new density matrix $\sigma$ defined by
+\[  \sigma_{m\mu,n\nu} \equiv  \rho_{n\mu,m\nu} \label{eq-pt} .\]
+
+The matrix $\sigma$ is defined from $\rho$ where the latin indices have been switched, but not the greek ones. This definition of $\sigma$ is equivalent to
+\[ \sigma=\pt{\rho}  \equiv  \sum_i p_i \, (\rho^1_i)^{\mbox{T}} \otimes \rho^2_i, \]
+where ``pt'' stands for \textit{partial transpose} and represents the operator that transposes the density matrix of the first subsystem. The partial transpose of a density matrix as defined by Eq.~(\ref{eq-pt}) is a very general concept which holds for any state, entangled or not. It is also applicable to any bipartite hermitian operator $A$ and we define similarly 
+\[  \left(\pt A \right)_{m\mu,n\nu} \equiv  A_{n\mu,m\nu}.\]
+
+The transposed density matrices $(\rho^1_i)^{\mbox{T}}$ of our separable state are still hermitian, positive operators and therefore are legitimate density matrices describing a physical state, which implies that so does $\sigma$. In other words, any separable state must have a positive partial transpose. From the physical sense of $\sigma$, the Peres criterion is stated.
+
+\crit{Peres Criterion (PPT Criterion)}{If a bipartite state described by the density matrix $\rho$ is separable, then its partial transpose $\pt \rho$ is positive.}
+
+Equivalently, if one eigenvalues of $\pt \rho$ is found to be negative, then the state $\rho$ is entangled. 
+
+This first statement of the criterion is only a necessary condition and was unfortunately proven to remain only necessary for the general case. However, its was proven by the Horodecki~\cite{HHH96} that this criterion was indeed necessary and sufficient in the case of systems of dimension $2\times 2$ or $2\times 3$.
+
+\crit{Peres-Horodecki Criterion}{A bipartite state described by the density matrix $\rho$ of dimension $2\times 2$ or $2\times 3$ is separable if and only if its partial transpose $\pt \rho$ is positive.}
+
+Although this criterion is very powerful, it cannot be implemented experimentally right away since the operation of partial transposition is a mathematical operator and not a physical one. That is why we found a way to make use of the PPT criterion in an experimental context, namely the measurement of Scr\"odinger-Robertson inequalities.
+
+\section{Schr\"odinger-Robertson Partial Transpose Criterion} \label{sec-SRPT}
+
+For any observables $A, B$ and any density operator $\rho$, the Schr\"odinger-Robertson inequality is observed. In this section, we use that property together with the PPT criterion to build a new entanglement criterion.
+
+The partial transpose $\pt\rho$ of a bipartite separable density operator must be positive, which implies it does describe some physical state and must therefore obey the Schr\"odinger-Robertson uncertainty relation for any observables $A$ and $B$, i.e.~Eq.~(\ref{eq-SRI}) also holds with $\pt\rho$ if $\rho$ is separable. In the density matrix formalism, this inequality is written
+\[ \begin{array}{c}
+\left( \tr{\pt \rho A}^2 - \tr{\pt \rho A^2} \right) \left( \tr{\pt \rho B}^2 - \tr{\pt \rho B^2} \right)  \hspace{4cm}   \\  \hfill \ge \frac 1 4 \left| \tr{\pt\rho [A,B]} \right|^2+\frac 1 4 \left| \tr{\pt\rho \{A,B\}} - 2  \tr{\pt \rho A} \tr{\pt \rho B}\right|^2.
+\end{array}\]
+
+This inequality always holds when applied on separable state, but might not do so when $\pt \rho$ represents a non-physical state, i.~e.~when $\rho$ is entangled. Since we cannot produce a $\pt \rho$ states with the experimental tools available, we could think of ``switching'' the partial transpose sign from $ \tr{\pt \rho A}$ to $ \tr{ \rho \pt A}$ and from $\tr{\pt \rho A^2}$ to $\tr{ \rho (\pt A)^2}$, which would yield the Scr\"odinger-Robertson partial transpose (SRPT) inequality
+\[  (\Delta \pt A)^2 (\Delta \pt B)^2 \ge \frac{1}{4} | \langle [A,B\pt ] \rangle |^2  +  \frac{1}{4} | \langle \{ A,B \pt \} \rangle  - 2 \langle \pt A \rangle \langle \pt B \rangle |^2 , \label{eq-SRPT} \]
+which would never be violated for separable states and violated by entangled states only. The key result of this chapter is that unlike the PPT criterion in itself, Eq.~(\ref{eq-SRPT}) has the property of being experimentally implementable since it deals with observable quantities. However, ``switching'' the partial transpose sign is not a trivial operation, we need to make sure the operation is valid. 
+
+First of all the partial transpose $\pt A$ of an observable $A$ must remain an observable; if that is the case then the mean value $ \tr{\rho \pt A}$ of a partially transposed observable must be equal to the mean value $ \tr{\pt\rho A}$ of the observable measured on the partially transposed density matrix and finally the value of the variance $(\Delta \pt A)^2$ must also follow that rule. In the next subsection, we investigate those conditions and prove a few properties, which will lead us to believe that not all observables can be considered in order to get a valid SRPT relation.
+
+\subsection{Properties of the Partial Transposition}
+
+In this subsection, we talk about a pair observables $A$ or $B$ that are considered to act on a system composed of two subsystems of size $n$ and $n'$, finite or not. We consider the matrix elements $A^\dagger_{i\mu,j\nu}$ with the latin indices $i,j$ referring to the first subsystem taking the values $1,2,\cdots,n$ and the greek indices $\mu,\nu$ referring to the second subsystem taking the values $1,2,\cdots,n'$.
+
+\setcounter{prop}{0}
+
+\begin{prop} \label{prop-herm}
+The partial transposition of an observable $A$ is an observable.
+\end{prop}
+
+\emph{Proof: } The only requirement for an operator $A$ to be an observable is to be hermitian, i.~e.~to verify $A^\dagger=A$. We have
+
+\begin{eqnarray}
+\left((\pt A)^\dagger \right)_{i\mu,j\nu}  &=& (\pt A)_{j\nu,i\mu}^* ,\\
+&=& A_{i\nu,j\mu}^* ,\\
+&=& A_{j\mu,i\nu} ,\\
+&=& (\pt A)_{i\mu,j\nu},
+\end{eqnarray}
+which concludes the proof.
+
+The next proposition deals with the mean values of observables.
+
+\begin{prop} \label{prop-mean}
+For any operators $A$, $B$, we have
+\[ \tr{\pt A B} = \tr{ A \pt B}.\]
+\end{prop}
+
+\emph{Proof: } in order to simplify the developments, we use the convention of a repeated index implying a summation over all values of said index. We have
+
+\begin{eqnarray}
+\tr{\pt A B} &=& (\pt A B)_{i\mu,i\mu} = \left( \pt A\right)_{i\mu,l\lambda} B_{l\lambda,i\mu} ,\\
+&=&  A_{l\mu,i\lambda} B_{l\lambda,i\mu} =  A_{l\mu,i\lambda} \left(\pt B \right)_{i\lambda,l\mu}, \\
+&=&   (A \pt B )_{l\mu,l\mu} =  \tr{A \pt B} ,
+\end{eqnarray}
+which concludes. 
+
+Hence, if $B$ represents a density matrix, this result means that the mean value of a partially transposed observable is equal to the mean value of the observable measured on the partially transposed density matrix. The next proposition deals with the variance.
+
+\begin{prop} \label{prop-rem}
+For any observable $A$, we have
+\[\tr{\pt \rho A^2} = \tr{ \rho \left(\pt A \right)^2 }, \]
+for any density matrix $\rho$ if and only if
+\[\left(\pt {A}\right)^2 = \pt{\left(A^2\right)} .\label{eq-rem}\] 
+\end{prop}
+
+\emph{Proof: } if $ \left(\pt {A}\right)^2 =\pt{\left(A^2\right)}$, then the result is a direct consequence of Prop.~\ref{prop-mean}. On the other hand, if the traces are identical
+\[ \tr{\pt \rho A^2} - \tr{ \rho \left(\pt A \right)^2 } = \tr{ \rho \left[ \pt{\left(A^2\right)} - \left(\pt A \right)^2 \right] } = 0 ,\]
+and in particular, we must have
+\[ \prodsc{\psi}{\pt{\left(A^2\right)} - \left(\pt A \right)^2}{\psi} =0,\]
+for \emph{any} state vector $\ket{\psi}$ including all the eigenstates of the observable, which is only possible if $\left(\pt {A}\right)^2 = \pt{\left(A^2\right)}$. This result shows that the variance $(\Delta \pt A)^2=\tr{\rho (\pt A)^2}-\tr{\rho \pt A}^2$ is not always equal to the variance $(\Delta A)^2$ applied on the partially transposed state $\pt \rho$.
+
+This result is the major constraint about using SRPT inequalities. In general, observables do not  satisfy Eq.~(\ref{eq-rem}), which can result in a violation of an SRPT inequality applied on a separable state with unsuitable observables. 
+
+To illustrate this, we consider the inequality corresponding to the computational basis vector $\ket{00}$ of a two-qubit system using the observables 
+\begin{eqnarray}
+A &=& \sigma_x\otimes\sigma_x, \\
+B &=& \sigma_x \otimes \sigma_y +  \sigma_y \otimes \sigma_x,
+\end{eqnarray}
+with $\sigma_x$ and $\sigma_y$ the Pauli operators. Even though the state $\ket{00}$ is separable, we find $\Delta \pt B =0$ and $|\mean{[A,B\pt]}|=2$ which means the SRPT inequality is violated. That violation could happen since $(\pt {B})^2 \neq \pt{(B^2)}$. This example illustrates the importance of using suitable observables in the SRPT inequality. Now that we defined the conditions for the SRPT inequality to be used, we can formulate our new criterion.
+
+\crit{Schr\"odinger-Robertson Partial Transpose Criterion}{
+If there are two observables $A, B$ satisfying 
+\[ (\pt {A})^2 =\pt{ \left(A^2 \right)}, \; (\pt {B})^2 = \pt{\left(B^2 \right)}, \]
+such that the Schr\"odinger-Robertson inequality
+\[  (\Delta \pt A)^2 (\Delta \pt B)^2 \ge \frac{1}{4} | \langle [A,B\pt ] \rangle |^2  +  \frac{1}{4} | \langle \{ A,B \pt \} \rangle  - 2 \langle \pt A \rangle \langle \pt B \rangle |^2 , \] 
+measured on a state $\rho$ is violated, then the $\rho$ is entangled.}
+
+\subsection{Form of the Suitable Observables}
+
+The first step into actually being able to use our criterion is getting more information about the specific observables that can be used. If there is no observable $A$ satisfying Eq. (\ref{eq-rem}), then the criterion is useless. In the following, we show that such observables do exist and that the criterion is actually necessary and sufficient for bipartite pure states.
+
+Let us now characterize the form of the observables $A$ of dimension $N=n\times n'$ that satisfy $(\pt {A})^2 = \pt{\left(A^2 \right)}$. In order to do so, wee need to define a matrix orthogonal basis that will span all hermitian matrices. 
+
+Suitable candidates for that basis are the infinitesimal generators of the special unitary group SU($N$), as they are all hermitian. The number of independent generators of SU($N$) is $N^2-1$ and we need to add the identity matrix to the set to obtain the matrix basis we are looking for.
+
+By definition, the $N^2-1$ generators $S_i$ are $N\times N$, traceless and hermitian matrices such that
+\[ S_a S_b = \frac{1}{2N}\delta_{ab}I_N + \frac{1}{2}\sum_{c=1}^{N^2 -1}{(if_{abc} + d_{abc}) S_c},  \]
+with $a,b=1,2,\cdots, N^2-1$ and where $I_N$ is the $N\times N$ identity matrix ,$\delta_{ab}$ the Kronecker symbol, the $f_{abc} $ and $d_{abc}$ are structure constants and are respectively antisymmetric and symmetric in all indices. As it follows,
+\begin{eqnarray}
+\left\{S_a, S_b\right\} &=&\frac{1}{N}\delta_{ab} I_N+ \sum_{c=1}^{N^2 -1}{d_{abc} S_c}, \\
+\left[S_a, S_b \right] &=& i \sum_{c=1}^{N^2 -1}{f_{abc} S_c}. \label{eq-Scomm}
+\end{eqnarray}
+
+That basis is orthogonal in the sense of the inner product
+\[ 2\; \tr{S_a S_b} =  \delta_{ab}. \]
+
+The Pauli matrices
+\[ \begin{array} {ccc}  
+\sigma_x= \left( \begin{array} {cc} 0 &1 \\ 1 & 0\end{array} \right), & \sigma_y= \left( \begin{array} {cc} 0 &-i \\ i & 0\end{array} \right) ,&\sigma_z=  \left( \begin{array} {cc} 1 &0 \\ 0 & -1 \end{array} \right),  \end{array} \]
+are (when divided by 2) such examples of generators for $N=2$ , in which case the $d$ constants are all zero and the $f$ constants take the values of the Levi-Civita symbol $\epsilon_{ijk}$. The Gell-Mann matrices
+\[ \begin{array} {ccc} 
+\lambda_1 = \left(\begin{array} {ccc}0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right), &
+\lambda_2 =\left( \begin{array} {ccc}0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{array}\right), &
+\lambda_3 = \left(\begin{array} {ccc}1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{array}\right), \\ 
+\lambda_4 = \left(\begin{array} {ccc}0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right) ,&
+\lambda_5 = \left(\begin{array} {ccc}0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{array}\right) ,&
+\lambda_6 = \left(\begin{array} {ccc}0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{array}\right) ,\\
+\lambda_7 = \left(\begin{array} {ccc}0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{array}\right) , & 
+\lambda_8 = \frac{1}{\sqrt{3}} \left(\begin{array} {ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{array}\right), &
+\end{array} \]
+ are also matrices of that form for $N=3$ when divided by 2 for normalization. 
+ 
+ Generalizing from the Pauli and Gell-Mann matrices, we can find a general set of SU($N$) infinitesimal generators. Written in an operator-like fashion on the basis $\{ \ket 1, \ket 2, \cdots, \ket N \}$ we find the first set of $(N^2-N)/2$ matrices
+\[ S^{(1)}_{i,j} =\frac 1 2 ( \ketbra{i}{j} + \ketbra{j}{i} ) ,\]
+ for $i=1,2,\cdots, N-1$ and $j=i+1,i+2,\cdots, N$. With the same conditions on $i,j$ we give the second set of  $(N^2-N)/2$ matrices
+\[ S^{(2)}_{i,j} =\frac{-i}2 ( \ketbra{i}{j} - \ketbra{j}{i} ).\]
+The last set of $N-1$ matrices is given by
+\[ S^{(3)}_{i} =\frac{1}{\sqrt{2(i^2+i)}} \left( \sum_{k=1}^i \ketbra{k}{k} - i \ketbra{i+1}{i+1} \right),\]
+for $i=1,2,\cdots, N-1$. All the matrices are properly normalized, and by relabeling them, one finds a set of $N^2-1$ matrices with the coefficients $f_{abc}, d_{abc}$ easily found from the commutation and anticommutation relations. 
+
+Let us now consider a general system composed of two subsystems of respective dimensions $n$ and $n'$, with $N=n\times n'$, which are spanned by the base matrices $S_i$ and $S'_i$ with structure constants $f, d$ and $f', d'$. We add to the basis identity matrices by defining $S_0 \equiv I_n / \sqrt{2n}$ and $S'_0\equiv I_{n'}/ \sqrt{2n'}$ and use once again the convention that any repeated index implies a sum over all of its possible values. We can therefore write a general hermitian matrix $A$ as
+\[ A = a_{ij} S_i \otimes S'_j, \]
+with the real coefficients $a_{ij}$ defined as $a_{ij} \equiv 4 \tr{A S_i \otimes S'_j}$ and $i$ and $j$ running from 0 to $n^2-1$ and ${n'}^2-1$. Hence, we have 
+\begin{eqnarray}
+(\pt {A})^2 &=& a_{ij} a_{kl} (S_k S_i)^{\textrm{T}} \otimes S'_j S'_l, \label{eq-Apt2}\\
+\pt{\left(A^2 \right)} &=& a_{kj} a_{il}  (S_k S_i)^{\textrm{T}}  \otimes S'_j S'_l. \label{eq-A2pt}
+\end{eqnarray}
+
+We can see that if $S_k$ and $S_i$ commute, one only needs to switch their order in Eq. (\ref{eq-A2pt}) and rename $i$ as $k$ and vice versa for the matrices to be equal. However, given the commutation property (\ref{eq-Scomm}), it is clear that in general they do not do so and the only matrix that is assured to commute with all others is the identity matrix $S_0$. The same can be said of $S'_j$ and $S'_l$ and therefore, we see that every term with a $0$ index in (\ref{eq-Apt2}) will be found exactly the same in (\ref{eq-A2pt}), which means there are no restrictions on the values of the $a_{ij}$ coefficients when $i$ or $j$ is zero. For the rest of the $(n-1)\times(n'-1)$ coefficients, we need to investigate  further. Letting go of all the terms including a zero index, we find that the quantities (\ref{eq-Apt2}) and (\ref{eq-A2pt}) are equal if and only if
+\begin{eqnarray}
+0 &=& (a_{ij} a_{kl}-a_{kj} a_{il})  (S_k S_i)^{\textrm{T}}  \otimes S'_j S'_l, \\
+&=& \frac 1 4 (a_{ij} a_{kl}-a_{kj} a_{il}) \left( \delta_{ki} \frac{I_n}n + (if_{kip} + d_{kip})S_p^{\textrm{T}}  \right)\otimes \left(\delta_{jl} \frac{I_{n'}}{n'} +(if'_{jlq} + d'_{jlq}) S'_q\right),\\
+&=& \frac 1 4 (a_{ij} a_{kl}-a_{kj} a_{il}) \left( (if_{kip} + d_{kip}) S_p^{\textrm{T}} \right)\otimes \left((if'_{jlq} + d'_{jlq}) S'_q\right),\\
+&=&  -\frac 1 4 f_{kip}f'_{jlq}   (a_{ij} a_{kl}-a_{kj} a_{il})  S_p^{\textrm{T}}  \otimes S'_q ,\\
+&=&  -\frac 1 2  f_{kip}f'_{jlq}  a_{ij} a_{kl} S_p^{\textrm{T}}  \otimes S'_q, \\
+\end{eqnarray}
+where in the third and fourth step we used the fact that an antisymmetric quantity such as  $(a_{ij} a_{kl}-a_{kj} a_{il})$ summed with a symmetric factor $	\delta_{ki}$ or $d_{kip}$ will amount to zero and in the last step we noted that $f_{kip}f'_{jlq} a_{kj} a_{il}=-f_{kip}f'_{jlq} a_{ij} a_{jl}$. We end up with an null operator expressed in the  $S_p^{\textrm{T}}  \otimes S'_q$ basis which is completely legitimate and we find the following result : the matrix $A$ will satisfy $(\pt {A})^2 = \pt{\left(A^2 \right)}$  if and only if
+\[ f_{kip}f'_{jlq}  a_{ij} a_{kl}=0 , \]
+for all $p, q$ and all indices above 0.
+
+In the case of two-qubit systems, that condition has a simple interpretation. Indeed, for $2\times 2$ systems, the Pauli matrices form the matrix basis and the condition is expressed as 
+\[ \epsilon_{kip}\epsilon_{jlq}  a_{ij} a_{kl}=0 , \]
+for all $p,q$ above 0, which  expresses that every $2\times 2$ minor of the $3\times 3$ matrix $a_{ij}$ must be zero. Therefore all the lines (or columns) of that matrix must be linearly dependent and we can write $ a_{ij}=a_i b_j$. The general form of the matrices is then
+
+\[ A = (\mathbf{a}\cdot\boldsymbol{\sigma})  \otimes  (\mathbf{b}\cdot\boldsymbol{\sigma})  + I_2 \otimes (\mathbf{c}\cdot\boldsymbol{\sigma}) + (\mathbf{d}\cdot\boldsymbol{\sigma} ) \otimes I_2 +\eta \, I_4 ,\]
+where $\boldsymbol{\sigma}$ is the vector composed of the 3 Pauli operators,  $\mathbf{a}, \mathbf{b}, \mathbf{c}$ and $\mathbf{d}$ are
+four real vectors and $\eta$ is a real number.
+
+ As a particular case of this general result, we note that if $A$ can be written as $A_1 \otimes A_2$ with $A_1$ and $A_2$ two observables from the two subsystems, then $A$ satisfies Eq.~(\ref{eq-rem}) immediately.
+ 
+ \subsection{Necessary and sufficient criterion for pure states}
+
+In this subsection we state a necessary and sufficient version of our criterion.
+
+\crit{SRPT Criterion with Pure States}{ A bipartite pure state $\ket\psi \in \mathcal{H}_1\otimes \mathcal{H}_2$, with $\mathcal{H}_1$ and $\mathcal{H}_2$ two Hilbert spaces of any dimension is entangled if and only if there are observables $A$, $B$ acting on $\mathcal{H}_1\otimes \mathcal{H}_2$ satisfying 
+\[ (\pt {A})^2 =\pt{ \left(A^2 \right)}, \; (\pt {B})^2 = \pt{\left(B^2 \right)}, \label{eq-remAB}\]
+such that the SRPT inequality
+\[  (\Delta \pt A)^2 (\Delta \pt B)^2 \ge \frac{1}{4} | \langle [A,B\pt ] \rangle |^2  +  \frac{1}{4} | \langle \{ A,B \pt \} \rangle  - 2 \langle \pt A \rangle \langle \pt B \rangle |^2 , \] 
+is violated.}
+
+\emph{Proof:} Let us consider an entangled state $\ket\psi$ and express it in the following decomposition:
+\[ \ket\psi=\sum_i c_i \ket{i}_1\otimes \ket{i}_2,\]
+where the $\ket i_j$ are a basis of $\mathcal{H}_j$ and the $c_i$ complex numbers. Such a decomposition is always possible, the Schmidt decomposition being a particular one with real $c_i$ coefficients~\cite{Min05}.
+We will work in the $\ket{ij} \equiv \ket{i}_1\otimes \ket{j}_2$ basis, expressing operators through that basis.
+
+If there is only one non-zero coefficient $c_0$, the state is written $\ket\psi=\ket{00}$ and is obviously separable. Therefore, since $\ket\psi$ is entangled, there are at least two non-zero coefficients; let us assume without loss of generality $c_0 \neq 0 \neq c_1$. We define two observables
+\bea
+A&=&\ketbra{01}{01}, \\
+ B&=&\sigma_x\otimes\sigma_x,\label{eq-11},
+\eea
+ with the Pauli operator $\sigma_x \equiv \ketbra{0}{1} + \ketbra{1}{0}$. First, we have $\pt A = A$, $\pt B = B$ and we find that
+ \bea
+(\pt {A})^2 &=& \pt{(\ketbra{01}{01})} \pt{(\ketbra{01}{01})} = \ketbra{01}{01}, \\
+\pt{ \left(A^2 \right)} &=&  \pt{(\ketbra{01}{01}\cdot \ketbra{01}{01})} = \ketbra{01}{01}, \\
+(\pt {B})^2 &=& B^2 = \sigma_x \sigma_x \otimes \sigma_x \sigma_x = I_4, \\ 
+\pt{ \left(B^2 \right)} &=& \pt I_4 = I_4,
+ \eea 
+ therefore $A$ and $B$ do satisfy Eq. (\ref{eq-remAB}). We further find
+  \begin{eqnarray}
+  A\cdot B &=& \ketbra{01}{10} \\
+ \pt{[ A,B]} &=& \pt{( \ketbra{01}{10}- \ketbra{10}{01})} =\ketbra{11}{00}- \ketbra{00}{11} ,\\
+\pt{\{A,B\}} &=&\pt{( \ketbra{01}{10}+ \ketbra{10}{01})} = \ketbra{11}{00}+ \ketbra{00}{11}  .
+\end{eqnarray}
+For the mean values, 
+ \bea
+ \mean{\pt A} &=& \prodsc{\psi}{01\rangle \langle 01}{\psi} =0,\\
+ (\Delta \pt A)^2 &=& \mean{(\pt A)^2} =   \prodsc{\psi}{01\rangle \langle 01}{\psi} =0,
+ \eea
+hence we do not need to calculate $ \mean{\pt B}$ or $ (\Delta \pt B)^2 $ since they will not appear in the final SRPT inequality. We also have
+ \begin{eqnarray}
+\frac 1 4 | \langle \pt{[ A,B]} \rangle |^2 &=& \frac 1 4 | c_0^* c_1  - c_0 c_1^*  |^2=\mbox{Im}(c_0^* c_1)^2 \\
+\frac 1 4 | \langle \pt{\{A,B\}} \rangle  - 2 \langle \pt A \rangle \langle \pt B \rangle |^2 &=&  \frac 1 4 | c_0^* c_1  + c_0 c_1^*  |^2=\mbox{Re}(c_0^* c_1)^2.
+\end{eqnarray}
+
+The SRPT inequality is then written
+\[ 0 \ge  \mbox{Re}(c_0^* c_1)^2 + \mbox{Im}(c_0^* c_1)^2 =  |c_0|^2 |c_1|^2,  \label{eq-9} \]
+and is always violated for non-zero $c_0$ and $c_1$. We therefore have an experimentally implementable necessary and sufficient criterion for bipartite entanglement on pure states.
+
+The case of mixed states is a more complicated one. To this date, there is still no general method allowing to show the entanglement of two subsystems of any dimensions. Our original criterion remains: if one can find a couple of observables satisfying Eq. (\ref{eq-remAB}) and violating a SRPT inequality, then the mixed state is entangled, however there is no general method to find such observables given a particular entangled state or to even prove their existence.
+
+\section{Applications to Bipartite Systems}  \label{sec-SPRTbip}
+
+ We will now discuss some applications of the SRPT inequality starting by the bipartite case.
+
+\subsubsection{2D Harmonic Oscillator.} 
+
+We consider entanglement in states of an isotropic two dimensional oscillator with definite energy and angular momentum (see e.g.~Ref.~\cite{Mai01} describing the experimental production of entangled angular momentum states of photons). Those states are the common eigenvectors $\ket{\psi_{k,M}}$ ($k, M$ integers) of the hamiltonian 
+\[ H=\hbar \omega(a a^\dagger + b b^\dagger +1),\]
+with $a$ and $b$ the oscillator annihilation operators and of the angular momentum 
+\[ L_z = i \hbar (a b^\dagger - a^\dagger b),\]
+ with eigenvalues $\hbar \omega(n+1)$ (with $n=2k + |M|$) and $\hbar M$, respectively . The states $\ket{\psi_{k,M}}$ is expressed in the number state basis $\ket{n_1,n_2}$ as 
+ \[ \ket{\psi_{k,M}} = \sum_{j=0}^{n}c_j \ket{n-j,j},\label{eq-2dho}\]
+ with
+ \[ c_j =  \left(- \textrm{sign}(M) i \right)^j  \sqrt{\frac{\binom{n}{k} }{2^n \binom{n}{j}}}    \sum_{l=0}^{j}(-1)^l \binom{k+|M|}{l} \binom{k}{j-l} . \]
+ The proof of that result is shown in Appendix~\ref{appA}. The decomposition (\ref{eq-2dho}) is already in a Schmidt-like basis (with the $c_j$ complex) hence if there are two non zero coefficients, the state is entangled and it is a simple application of the proof for pure states to find the observables that will detect the entanglement. It is easy to find
+ \[ c_0 = \sqrt{\frac{\binom{n}{k} }{2^n}}, \]
+and in Appendix~\ref{appA} we also show the additional property $|c_j|=|c_{n-j}|$. Therefore, except for the ground state for which $c_0=1$, all angular momentum eigenstates are entangled in terms of the number states and the entanglement is well detected by the pair of observables
+\bea  
+A&=&\ketbra{ii}{ii}, \\  B&=&\sigma^{(i,j)}_x\otimes\sigma^{(i,j)}_x, \label{eq-AB2D}
+\eea
+with $\sigma_x^{(i,j)} \equiv \ketbra{i}{j} +\ketbra{j}{i}$ and $i+j =n$ which yields for those states the SRPT inequality 
+\[ |c_i||c_j|=|c_i|^2 \le 0 ,\] 
+evidently violated for $i=0$, but in general for several other values as well.
+
+\subsubsection{Multiphoton Polarization State.}
+
+For some particular experiments, the SRPT inequality can be particularly efficient. Here, we show that on some multiphoton polarization states, the detection of entanglement only involves the measurement of two projectors. Let us consider the entangled two-photon state
+\[ \ket\psi = \alpha \ket{0,2} + \beta \ket{1,1} + \gamma \ket{2,0}, \label{eq-multi} \]
+where $\alpha, \beta, \gamma$ are arbitrary coefficients such that $ \mbox{Re}(\alpha^* \gamma)\neq 0$ and $\ket{m,n}$ denotes $m$ photons in a given polarization state and $n$ photons orthogonally polarized to the $m$ firsts. The production and properties of those states have been studied in~\cite{Tse00}.  Of course, this state is also entangled since it is already in a Schmidt-like basis. Using the observables
+\bea  A&=&\ketbra{00}{00}, \\  B&=& \sigma^{(0,2)}_x\otimes\sigma^{(0,2)}_x, \eea
+and dropping the commutator term in (\ref{eq-SRPT}), we get the inequality $0 \ge | \mbox{Re}(\alpha^* \gamma)|$. Since $\ket\psi$ is never the vacuum, we have $\langle \pt A \rangle = \Delta \pt A = 0$ and $\pt B$ does not need to be measured. All that is needed to detect entanglement is the measurement of  
+\[ \{A,B\pt \}= \ketbra{02}{20}+\ketbra{20}{02} = \ketbra{\psi^+}{\psi^+}-\ketbra{\psi^-}{\psi^-}, \] 
+with $\ket{\psi^\pm}\equiv (\ket{02} \pm \ket{20})/\sqrt 2$. More generally, the entanglement of an $N$-photon state of the form $\sum_{i=0}^N c_i \ket{i,N-i }$  will always be easily detectable with similar observables.
+
+\subsubsection{Cat States.} 
+
+In quantum electrodynamics (QED), a coherent state $\alpha$ is defined to be an eigenstate of the annihilation operator $a$, with the eigenvalue $\alpha$, i.~e.~$a \ket\alpha=\alpha\ket\alpha$ and can be written as
+ \[ \ket \alpha =e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^{\infty} \frac{\alpha^n}{\sqrt{n!}} \ket n, \]
+ with $\ket n$ the Fock state basis of the considered mode.
+
+We consider the normalized Schr\"odinger cat state 
+\[ \ket{\psi}= \frac{1}{\mathcal{N}} (\ket{\alpha, \beta} + \ket{-\alpha,-\beta}), \label{eq-cat}\]
+ where $\ket\alpha, \ket\beta$ are coherent states and $\mathcal{N}=\sqrt{2+2 e^{-2|\alpha|^2-2|\beta|^2}}$.  
+The state $\ket{\psi}$ is a bipartite even state whose production and properties are discussed in~\cite{Ger07}. We want to find operators that will show its entanglement with an SRPT inequality.
+ 
+Our first step to simplify the problem is to find a basis in which $\alpha$ can be considered real. Let us consider that the cast state $\ket\alpha$ is expressed in the electromagnetic field mode $a$. The quadrature operators are defined as
+\bea
+x &=& \frac{1}{\sqrt 2} ( a^\dagger + a ), \\
+p &=& \frac{i}{\sqrt 2} ( a^\dagger - a ), \\
+\eea
+and by remembering that the cat states are eigenvalues of the annihilation operator,  we easily find for the mean values
+\bea
+\prodsc{\alpha}{x}{\alpha} &=& \frac{1}{\sqrt 2} ( \alpha^{*} + \alpha ) = \sqrt 2 \mbox{Re}(\alpha), \\
+\prodsc{\alpha}{p}{\alpha} &=& \frac{i}{\sqrt 2} ( \alpha^{*} - \alpha ) = \sqrt 2 \mbox{Im}(\alpha). \\
+\eea
+
+We can always find a rotated basis such that we do not need to deal with imaginary parts, let us define
+\bea
+x' &=& \cos\theta \;x + \sin\theta \;p = \frac{1}{\sqrt 2} \left( a^\dagger (\cos\theta + i \sin\theta)+ a(\cos\theta - i \sin\theta) \right) \nonumber, \\ 
+&=&  \frac{1}{\sqrt 2} \left( b^\dagger + b \right), \\
+p' &=& -\sin\theta \;x + \cos\theta \:p = \frac{i}{\sqrt 2} \left( a^\dagger (\cos\theta + i \sin\theta)- a(\cos\theta - i \sin\theta) \right) \nonumber, \\
+&=&  \frac{i}{\sqrt 2} \left( b^\dagger - b \right), \\
+\eea
+with $b\equiv e^{-i \theta} a$. By setting $e^{i \theta} = \alpha/|\alpha|$, we find,
+ \bea
+\prodsc{\alpha}{x'}{\alpha} &=& \frac{1}{\sqrt 2 |\alpha|} ( \alpha^{*}\alpha + \alpha\alpha^{*} ) = \sqrt 2 |\alpha|, \\
+\prodsc{\alpha}{p'}{\alpha} &=& \frac{i}{\sqrt 2 |\alpha|} ( \alpha^{*}\alpha - \alpha\alpha^{*} ) = 0, \\
+\eea
+which is the result we were looking for, since expressed in the mode $b$, the parameter $\alpha$ can be considered real. Even for a state such as the $\ket\psi$ state given in (\ref{eq-cat}), the same method can be applied since the two cat states $\ket{\pm\alpha}$ have the same imaginary part, up to the sign. We therefore assume that we are working in the electromagnetic modes $a$ and $b$ which treats $\alpha$ and $\beta$ as real numbers, when measuring quadrature operators, which are precisely the operators we use to find a violation of the SRPT inequality.
+
+ Experimentally, it is possible to show the entanglement of $\ket\psi$ with 
+\begin{eqnarray}
+A&=& a_1 (a^\dagger +a) + b_1 (b^\dagger +b), \\
+ B&=& i a_2 (a^\dagger - a) + i b_2 (b^\dagger -b),
+ \end{eqnarray}
+where $a_i$ and $b_i$ are real parameters and $a$ and $b$ are the annihilation operators of the fields of $\ket\alpha$ and $\ket\beta$ chosen such that they treat $\alpha$ and $\beta$ as real numbers. We get 
+\bea
+(\Delta \pt A)^2 &=& a_1^2+b_1^2 + 4 \frac{ (a_1 \alpha + b_1 \beta)^2}{1+ e^{-2(\alpha^2+\beta^2)}}, \\
+(\Delta \pt B)^2 &=& a_2^2+b_2^2 - 4 \frac{ (a_2 \alpha - b_2 \beta)^2}{1+ e^{2(\alpha^2+\beta^2)}}, \\
+ \frac{1}{4} | \langle [ A,B \pt ] \rangle |^2 &=& (a_1 a_2 + b_1 b_2)^2 , \\
+  \frac{1}{4} | \langle \{ A,B \pt \} \rangle - 2 \mean{\pt A} \mean{\pt B} |^2 &=& 0.
+ \eea
+ Setting $a_1 = - a_2 = - \beta$ and $b_1=-b_2= \alpha$ insures a violation of the SRPT inequality for non-zero $\alpha$ and $\beta$, since we get
+ \[ \left(\alpha^2+\beta^2 \right) \left(\alpha^2+\beta^2 -  \frac{16 \alpha^2 \beta^2 }{1+ e^{2 \alpha^2+2\beta^2}} \right) \ge \left(\alpha^2+\beta^2 \right) ^2 , \]
+ equivalent to
+  \[-  \frac{\alpha^2 \beta^2 }{1+ e^{2 \alpha^2+2\beta^2}}  \ge 0  , \]
+which is obviously always violated for non-zero parameters. Numerically speaking, the violation of the inequality is the strongest for values of $\alpha$ and $\beta$ around 0.74.
+
+In order to compare the results, one may try to apply the entanglement criterion introduced by Duan \textit{et al.} ~\cite{Sim00} on $\ket{\psi}$. That criterion is a sufficient condition for entanglement and is also necessary when applied on gaussian states. Clearly, the state $\ket\psi$ is not gaussian, but the criterion may still be applied. The calculation is very close to the previous on, however it can be shown that the cat state $\ket\psi$ never violates Duan \textit{et al.}'s inequality.
+
+\section{Necessary and Sufficient Criterion for Pure three-qubit States} \label{sec-SRPTtri}
+
+The SRPT inequality is also a strong criterion in the tripartite case. A tripartite pure state $\ket\psi$ is fully separable if it can be written as a combination of three separable subsystems as in $\ket\psi=\ket{\psi_1}\otimes\ket{\psi_2}\otimes \ket{\psi_3}$, biseparable if it can be written as a combination of one subsystem separated from the other (entangled) subsystems as in $\ket\psi = \ket{\psi_1} \otimes \ket{\psi_{23}}$ in the case of the first system being separable and fully entangled otherwise. 
+In that last case, for three qubit, there are two separate classes of entanglement represented by the states $\ket{\mbox{GHZ}}=(\ket{000}+\ket{111})/\sqrt 2$ and $\ket{\mbox{W}}=(\ket{001}+\ket{010+}\ket{100})/\sqrt 3$~\cite{Dur00}. 
+
+In the multipartite case, the partial transposition may be defined to act on any number of subsystems. In this chapter, when talking about multipartite states, we will always consider the partial transposition to act on the first subsystem of the state (or of the operator) only.
+
+It has been shown that any three-qubit state can always be written under the form~\cite{Aci00}:
+
+\[\ket{\psi} = \lambda_0 \ket{000}+\lambda_1 \ket{100}+\lambda_2 \ket{101}+\lambda_3 \ket{110}+\lambda_4 \ket{111}, \label{eq-3qb} \]
+where one $\lambda_i$ is complex and the other ones are real. We get to our next result:
+
+\crit{SRPT Criterion for Three-Qubit case}{ A three-qubit pure state is entangled if and only if there are observables satisfying Eq.~(\ref{eq-rem}) such that a Schr\"odinger-Robertson  partial transpose inequality is violated.}
+
+\emph{Proof.} We first consider a three-qubit state and express it as in Eq.~(\ref{eq-3qb}). 
+The three sets of observables
+\begin{eqnarray}
+A=\ketbra{001}{001} &\;&  B=\sigma_x\otimes I_2\otimes\sigma_x,\\
+A=\ketbra{010}{010} &\;&  B=\sigma_x\otimes\sigma_x\otimes I_2,\\
+A=\ketbra{011}{011} &\;&  B=\sigma_x\otimes\sigma_x\otimes\sigma_x,
+\end{eqnarray}
+lead to the SRPT inequalities 
+\bea
+|\lambda_0||\lambda_2| &\leq& 0, \\
+|\lambda_0||\lambda_3| &\leq& 0, \\
+|\lambda_0||\lambda_4| &\leq& 0. 
+\eea
+If $\lambda_0 =0$ the inequalities are not violated, but in that case 
+\[ \ket\psi = \ket{1} \otimes (\lambda_1 \ket{00}+\lambda_2 \ket{01}+\lambda_3 \ket{10}+\lambda_4 \ket{11}) ,\]
+is biseparable. We already know that every entangled two-qubit state can be detected with the mean of an SRPT inequality. If $\lambda_2=\lambda_3=\lambda_4=0$, there is no violation of the inequalities either, but in that case 
+ \[ \ket\psi = (\lambda_0 \ket{0} + \lambda_1 \ket{1}) \otimes \ket{00},\]
+is fully separable. Therefore, there is always an SRPT inequality able to detect the entanglement of $\ket\psi$. 
+ 
+ %In a Hilbert space of dimension greater than $2\times 2 \times 2$, a straightforward generalization of the demonstration in~\cite{Aci00} shows that any state $\ket\varphi$ can always be written as $\ket\psi + \ket{\psi'}$ with $\ket{\psi'}$ a linear combination of all basis product bases $\ket{n_1 n_2 n_3}$ with at least one $n_i > 1$. In that case, the observables we gave ignore $\ket{\psi'}$ and the result holds.
+
+An interesting result is the fact that a pair of bipartite operators can never detect a GHZ-type state. Indeed, the expectation value of an observable $A$ on a GHZ-type state expressed as in Eq.~(\ref{eq-3qb}) will be a combination of the terms $\langle 000 |A| 000\rangle$, $\langle 000 |A| 111\rangle$, $\langle 111 |A| 000\rangle$ and $\langle 111 |A| 111\rangle$. If $A$ is a bipartite observable acting, e.g., on the first two subsystems, we have $\langle 000 |A| 111\rangle = \langle 00 |A_{12}| 11\rangle  \langle 0|I_2|1\rangle = 0$. Thus, the mean value of the observable $A$ acting on a GHZ-type state is the same as if $A$ were acting on a separable state of the form $\rho=\lambda_0^2 \ketbra{000}{000} + \lambda_4^2 \ketbra{111}{111}$. Therefore there cannot be any violation of an SRPT inequality.
+
+%\subsubsection{3D harmonic oscillator.} 
+%
+%We consider entanglement in the angular momentum states of a three-dimensional harmonic oscillator. Those states are the common eigenvectors $\ket{\psi_{k,l,m}}$ ($k, l, m$ integers, $|m| \le l$) of the hamiltonian $H=\omega(a a^\dagger + b b^\dagger + c c^\dagger + 3/2)$
+%($a$, $b$, $c$ are the oscillator annihilation operators according to the 3 directions $x$, $y$ and $z$, respectively), the squared total angular momentum $L^2$~\footnote{$L^2=-(a^2 b^{\dagger 2} +a^{\dagger 2} b^2 +a^2 c^{\dagger 2} + a^{\dagger 2} c^2+b^2 c^{\dagger 2} + b^{\dagger 2} c^2) + 2(a a^\dagger b b^\dagger +a a^\dagger c c^\dagger + b b^\dagger c c^\dagger+ a a^\dagger + b b^\dagger + c c^\dagger)$.}, and the angular momentum $z$-component $L_z =i (a b^\dagger - a^\dagger b)$ with eigenvalues $\omega(n + 3/2)$ (with $n=2k + l$), $l(l+1)$ and $m$, respectively. The states $\ket{\psi_{k,l,m}}$ can always be expressed in the number state basis $\ket{n_1,n_2,n_3}$ as $\sum_{i=0}^n\sum_{j=0}^i c_{ij} \ket{j,i-j,n-i}$ and
+%are entangled for $\ket{\psi_{k,l,m}}=\ket{\psi_{0,1,\pm 1}}$ or whenever $n > 1$. In this case,
+%the $m=0$ (resp.~$m\neq 0$) states are characterized with non-zero coefficients $c_{20}, c_{22}$ (resp.~$c_{m0}, c_{mm}$).
+%The entanglement of the $m=0$ states can be detected using the observables
+%\[ A=\ketbra{00n-2}{00n-2},  B=\sigma^{(2)}_x\otimes\sigma^{(2)}_x\otimes \ketbra{n-2}{n-2}, \]
+%which yield the SRPT inequality $|c_{20}||c_{22}|\le 0$, evidently violated. For $m\neq 0$, the observables
+%\[ A=\ketbra{00n-m}{00n-m}, B=\sigma^{(m)}_x\otimes\sigma^{(m)}_x\otimes \ketbra{n-m}{n-m}. \]
+%yield similarly the violated SRPT inequality $|c_{m0}||c_{mm}|\le 0$.
+
+\section{Application to Mixed States} \label{sec-SRPTmix}
+
+Let us now investigate the performances of the SRPT criterion on mixed states.
+
+\subsubsection{Bipartite Werner States.}  
+
+The generalization of the SRPT criterion to mixed states is a difficult task. We may try, as an illustrative example, to detect the Werner mixed state ~\cite{Wer89}
+\[ \rho_x = x \ketbra{\psi}{\psi} +  (1-x)\frac{I_4}4\]
+with the normalized state $\ket{\psi} = a \ket{00} + b \ket{11}$. 
+
+The PPT criterion, which is necessary and sufficient for the $2\times 2$ mixed state case may be used to describe the entanglement of the state. We find that the partially transposed state $\pt \rho_x$ has the eigenvalues 
+\bea
+\frac{1-x}{4} + x |a|^2, \\
+\frac{1-x}{4} + x |b|^2, \\
+\frac{1-x}{4} + x |a||b|, \\
+\frac{1-x}{4} - x |a||b|.
+\eea
+
+The three first ones can never be negative, but we find that the last one is negative, i.~e.~the state is entangled, if and only if $ x > 1 / (1+4|a||b|).$ 
+
+Using the pair of observables:
+\bea A&=&\sigma_z\otimes\sigma_z, \\
+  B&=&\sigma_x\otimes(\cos\varphi\, \sigma_x+\sin\varphi \, \sigma_y),
+  \eea
+our SRPT inequality detects the entanglement of  $\rho_W$ when $x > 2/(1+\sqrt{1+32\, \mbox{Re}(e^{i \varphi} a^* b)})$.
+
+In the particular case when $\ket\psi$ is the Bell state $\ket{\phi^\pm}$, i.~e.~when $a=\pm b = 1/ \sqrt 2$, and $\varphi=0$, $\rho_x$ is entangled if and only if $x > 1/3$ whereas it is detected via the SRPT inequality  when $x > 1/2$. This result improves the limits of detection given by the Bell inequalities ($x > 1 / {\sqrt 2}$, see~\cite{Per96}) or by the uncertainty relations of G\"uhne~\cite{Guh04} ($x> 1/{\sqrt 3}$).
+
+\subsubsection{Multipartite Werner States.} 
+
+The SRPT inequality can be applied on mixed states of multipartite systems. Let us look at its results on the $N$-dimensional Werner mixed state 
+\[ \rho(x)= x \ketbra{\mbox{GHZ}_N}{\mbox{GHZ}_N} +(1-x)\frac{I_{2^N}}{2^N},\] 
+with $\ket{\mbox{GHZ}_N} \equiv (\ket{0\cdots0}+\ket{1\cdots1})/\sqrt 2$.  Using the observables
+\begin{eqnarray}
+A&=&\ketbra{01\cdots 1}{01\cdots1}+\ketbra{10\cdots 0}{10\cdots 0},\\
+B&=&\ketbra{0\cdots 0}{1\cdots1}+\ketbra{1\cdots 1}{0\cdots 0} \nonumber \\
+ && \ +\ketbra{01\cdots 1}{10\cdots0}+\ketbra{10\cdots 0}{01\cdots 1},
+\end{eqnarray}
+we find an SRPT inequality violated if $x> 1/(1+2^{N-2})$. The PPT criterion gives the sufficient limit of entanglement $x> 1/(1+2^{N-1})$ and we can find in~\cite{Tot05} a witness giving the detection limit  of $x>(2-2^{2-N})/(3-2^{2-N})$, which is strictly smaller than our result for $N \geq 3$ (also, that limit approaches $2/3$ as $N$ grows, where ours approaches 0). For $N=3$, the PPT criterion gives $x>1/5$, we find the limit $x>1/3$ while in~\cite{Tot05} the limit is $x>3/5$ and another witness in~\cite{Guh04} gives the limit $x>3/7$.
+
+Finally it should be kept in mind that any criterion based on inequalities would be restrictive as these are based on two chosen observables unlike the density operators which contain all the information. One could of course increase the number of observables and work a stronger criterion  based on the positivity condition $\langle \left( \sum_i c_i A_{i} \right)^\dagger \left(\sum_i c_i A_{i} \right)  \rangle \ge 0$~\cite{Ush07},
+for any observable $A_{i}$. Further possibilities consist of using generalized uncertainty relations which are especially suitable for mixed states~\cite{Aga03}. 
+
+Most of the results from this chapter were published in Phys. Rev. A \textbf{78}, 052317 (2008).
