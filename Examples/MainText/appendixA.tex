@@ -13,24 +13,24 @@ with $x_i, p_i$ the position and momentum of the particle in the directions $i=x
 \[ \ket{n_x, n_y} \equiv \ket{n_x} \otimes \ket{n_y}, \]
 when the $\ket{n_i}$ are the eigenstates of the two one dimensional Hamiltonians. We may define the annihilation operators:
 \begin{eqnarray}
-a_x &=& \frac{1}{\sqrt 2} \left( \sqrt{\frac{m\omega}{\hbar}} x + \frac{i}{\sqrt{m \hbar \omega}} p_x \right), \\ 
-a_y &=& \frac{1}{\sqrt 2} \left( \sqrt{\frac{m\omega}{\hbar}} y +\frac{i}{\sqrt{m \hbar \omega}} p_y \right).
+    a_x &=& \frac{1}{\sqrt 2} \left( \sqrt{\frac{m\omega}{\hbar}} x + \frac{i}{\sqrt{m \hbar \omega}} p_x \right), \\
+    a_y &=& \frac{1}{\sqrt 2} \left( \sqrt{\frac{m\omega}{\hbar}} y +\frac{i}{\sqrt{m \hbar \omega}} p_y \right).
 \end{eqnarray}
 The creation operators $a^\dagger_i$ are the hermitian conjugates of the above operators. We have
 \[ [a_x,a^\dagger_x]= [a_y,a^\dagger_y]=1, \]
 while all other commutators between the four operators are zero. Let us finally define the number operators
 \begin{eqnarray}
-N_x &=&a_x^\dagger a_x, \\ 
-N_y &=& a_y^\dagger a_y,
+    N_x &=&a_x^\dagger a_x, \\
+    N_y &=& a_y^\dagger a_y,
 \end{eqnarray}
 which allow us to write $H$ as
 \[ H = (N_x + N_y +1) \hbar \omega. \]
 
 The eigenstates have the properties
 \begin{eqnarray}
-a_i \ket{n_i} &=& \sqrt{n_i} \ket{n_i-1},\\
-a_i^\dagger \ket{n_i} &=& \sqrt{n_i+1} \ket{n_i+1},\\
-N_i \ket{n_i} &=& n_i \ket{n_i},
+    a_i \ket{n_i} &=& \sqrt{n_i} \ket{n_i-1},\\
+    a_i^\dagger \ket{n_i} &=& \sqrt{n_i+1} \ket{n_i+1},\\
+    N_i \ket{n_i} &=& n_i \ket{n_i},
 \end{eqnarray}
 and therefore, we have
 \[  \ket{n_x,n_y} = \frac{1}{\sqrt{n_x! n_y!}} \left( a_x^\dagger \right)^{n_x}  \left( a_y^\dagger \right)^{n_y} \ket{0,0}, \]
@@ -49,12 +49,12 @@ or in other terms
 \[ L_z= i\hbar(a_x a_y^\dagger-a_x^\dagger a_y), \]
 and it is clear that the $\ket{n_x,n_y}$ states are not eigenstates of $L_z$.
 
-However, it is possible to show that 
+However, it is possible to show that
 \[ [H,L_z]=0, \]
 which indicates there must be a common eigenstate basis for the two operators. That basis is made of the $\ket{\psi_{k,M}}$ eigenvectors which has the following properties:
 \begin{eqnarray}
-H \ket{\psi_{k,M}} &=& \hbar \omega(2k+|M|+1) \ket{\psi_{k,M}},\\
-L_z \ket{\psi_{k,M}} &=& \hbar M \ket{\psi_{k,M}}.
+    H \ket{\psi_{k,M}} &=& \hbar \omega(2k+|M|+1) \ket{\psi_{k,M}},\\
+    L_z \ket{\psi_{k,M}} &=& \hbar M \ket{\psi_{k,M}}.
 \end{eqnarray}
 
 We wish to express any $\ket{\psi_{k,M}}$ state in function of the $\ket{n_x,n_y}$ states. It is quite clear that $n=n_x+n_y=2k+|M|$ and therefore for given $k$ and $M$ we have in general
@@ -62,37 +62,37 @@ We wish to express any $\ket{\psi_{k,M}}$ state in function of the $\ket{n_x,n_y
 
 To find the analytical expression of the $c_i$ coefficients, we need to define an intermediate basis as follow
 \begin{eqnarray}
-a_r &=& \frac{1}{\sqrt 2} \left(a_x-ia_y \right), \\ 
-a_l &=& \frac{1}{\sqrt 2} \left(a_x+ia_y \right),
+    a_r &=& \frac{1}{\sqrt 2} \left(a_x-ia_y \right), \\
+    a_l &=& \frac{1}{\sqrt 2} \left(a_x+ia_y \right),
 \end{eqnarray}
 where $r$ and $l$ stand for right and left, as those operators can be interpreted as annihilators of right and left  ``circular quanta''. They are very similar to $a_x$ and $a_y$, they follow the commutation rules
 \[ [a_r,a^\dagger_r]= [a_l,a^\dagger_l]=1, \]
 and all other combinations are zero. It is possible to express the regular ladder operators in function of the circular one and we find that
 \begin{eqnarray}
-H&=&(N_r + N_l +1) \hbar \omega,\\
-L_z &=& \hbar (N_r- N_l) ,
+    H&=&(N_r + N_l +1) \hbar \omega,\\
+    L_z &=& \hbar (N_r- N_l) ,
 \end{eqnarray}
 with $N_r=a^\dagger_r a_r$ and $N_l=a^\dagger_l a_l$ the new number operators. We see that there is a $\ket{\varphi_{n_r,n_l}}$ basis in which both $H$ and $L_z$ are diagonal and which behaves exactly like the $\ket{n_x,n_y}$ basis. We also find
 \begin{eqnarray}
-n &=& n_r + n_l = 2k+ |M|, \\ 
-M &=& n_r - n_l,
+    n &=& n_r + n_l = 2k+ |M|, \\
+    M &=& n_r - n_l,
 \end{eqnarray}
 
 This result does allow to associate a definite $\ket{\psi_{k,M}}$ state to a single state $\ket{\varphi_{n_r,n_l}}$. There are two cases depending on the sign of $M$; if $M>0$, it means $n_r>n_l$ and $|M|=n_r-n_l$ and $k=n_l$, if $M<0$, then $|M|=n_l-n_r$ and $k=n_r$. Globally,
 \begin{eqnarray}
-\ket{\psi_{k,M}} &=& \ket{\varphi_{n_r=k+|M|,n_l=k}} \:\: \textrm{if } M>0, \\ 
-\ket{\psi_{k,M}} &=& \ket{\varphi_{n_r=k,n_l=k+|M|}} \:\: \textrm{if } M<0.
+    \ket{\psi_{k,M}} &=& \ket{\varphi_{n_r=k+|M|,n_l=k}} \:\: \textrm{if } M>0, \\
+    \ket{\psi_{k,M}} &=& \ket{\varphi_{n_r=k,n_l=k+|M|}} \:\: \textrm{if } M<0.
 \end{eqnarray}
 
 We see that a state with a positive helicity $M$ has more ``right'' quanta than ``left'' quanta and inversely for $M<0$. Now, to express a $\ket{\varphi_{n_r,n_l}}$ into a combination of $\ket{n_x,n_y}$ we have
 \begin{eqnarray}
-\ket{\varphi_{n_r,n_l}}&=& \frac{1}{\sqrt{n_r! n_l!}} \left( a_r^\dagger \right)^{n_r}  \left( a_l^\dagger \right)^{n_l} \ket{\varphi_{0,0}}, \\
-&=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \left( a_x^\dagger +ia_y^\dagger \right)^{n_r}  \left( a_x^\dagger -ia_y^\dagger\right)^{n_l} \ket{0,0}, \label{eq-2D2}\\
-&=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{k=0}^{n_r} \sum_{l=0}^{n_l}  \binom{n_r}{k} \binom{n_l}{l} \left( a_x^\dagger \right)^{n-k-l}  \left(a_y^\dagger \right)^{j+k} (i)^{k-l} \ket{0,0}, \label{eq-2D3}\\
-&=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{i=0}^{n} \sum_{j}^{\{-i,-i+2,\cdots, i\}}  \binom{n_r}{\frac{i-j}{2}} \binom{n_l}{\frac{i+j}{2}} \left( a_x^\dagger \right)^{n-i}  \left(a_y^\dagger \right)^i (i)^{j} \ket{0,0}, \label{eq-2D4}\\
-&=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{i=0}^{n} \sum_{j=0}^{i}  \binom{n_r}{j} \binom{n_l}{i-j} \left( a_x^\dagger \right)^{n-i}  \left(a_y^\dagger \right)^i (i)^{2j-i} \ket{0,0},\label{eq-2D5} \\
-&=&   \sum_{i=0}^{n}(-i)^i  \sqrt{ \frac{(n-i)! i!}{2^n n_r! n_l!}}    \sum_{j=0}^{i} (-1)^j \binom{n_r}{j} \binom{n_l}{i-j}  \ket{n-i,i},\label{eq-2D6} \\
-&=&   \sum_{i=0}^{n}(-i)^i  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=0}^{i}(-1)^j \binom{n_r}{j} \binom{n_l}{i-j}  \ket{n-i,i}, \label{eq-2D7}
+    \ket{\varphi_{n_r,n_l}}&=& \frac{1}{\sqrt{n_r! n_l!}} \left( a_r^\dagger \right)^{n_r}  \left( a_l^\dagger \right)^{n_l} \ket{\varphi_{0,0}}, \\
+    &=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \left( a_x^\dagger +ia_y^\dagger \right)^{n_r}  \left( a_x^\dagger -ia_y^\dagger\right)^{n_l} \ket{0,0}, \label{eq-2D2}\\
+    &=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{k=0}^{n_r} \sum_{l=0}^{n_l}  \binom{n_r}{k} \binom{n_l}{l} \left( a_x^\dagger \right)^{n-k-l}  \left(a_y^\dagger \right)^{j+k} (i)^{k-l} \ket{0,0}, \label{eq-2D3}\\
+    &=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{i=0}^{n} \sum_{j}^{\{-i,-i+2,\cdots, i\}}  \binom{n_r}{\frac{i-j}{2}} \binom{n_l}{\frac{i+j}{2}} \left( a_x^\dagger \right)^{n-i}  \left(a_y^\dagger \right)^i (i)^{j} \ket{0,0}, \label{eq-2D4}\\
+    &=&   \frac{1}{\sqrt{2^n n_r! n_l!}} \sum_{i=0}^{n} \sum_{j=0}^{i}  \binom{n_r}{j} \binom{n_l}{i-j} \left( a_x^\dagger \right)^{n-i}  \left(a_y^\dagger \right)^i (i)^{2j-i} \ket{0,0},\label{eq-2D5} \\
+    &=&   \sum_{i=0}^{n}(-i)^i  \sqrt{ \frac{(n-i)! i!}{2^n n_r! n_l!}}    \sum_{j=0}^{i} (-1)^j \binom{n_r}{j} \binom{n_l}{i-j}  \ket{n-i,i},\label{eq-2D6} \\
+    &=&   \sum_{i=0}^{n}(-i)^i  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=0}^{i}(-1)^j \binom{n_r}{j} \binom{n_l}{i-j}  \ket{n-i,i}, \label{eq-2D7}
 \end{eqnarray}
 where on line (\ref{eq-2D2}) we simply used the definition of $a_r$ and $a_l$ and noted the ground state is the same in both basis, in (\ref{eq-2D3}) we used the binomial formula twice and in (\ref{eq-2D4}) we applied the change of variables $i=k+l$ and $j=k-l$. In order to span all values of $(k,l)$ only once, we span all ``antidiagonal'' lines with $k+l=i$ $(i=0,1,\ldots,n)$ and along those lines we consider the elements $(k=\frac{i+j}{2},l=\frac{i-j}{2})$ $(j=-i, -i+2,\ldots, i-2,i)$. The values of $j$ should actually only go from $\max\{-i,i-2 n_l\}$ to  $\min\{i,2 n_r -i\}$ in order not to go beyond $k=n_r$ and $l=n_l$ but we can simplify it since the binomial coefficients will yield zero if $k>n_r$ or $l>n_l$. In line (\ref{eq-2D5}) we applied yet another change of variable as $j'=\frac{i+j}{2}$ $(j=0, 1, \ldots, i)$ and renamed $j'$ as $j$, in (\ref{eq-2D6}) we applied the creation operators to the ground state and in (\ref{eq-2D7}) we multiplied the numerator and denominator in the root term by $n!$ and simplified the expression. The final sum on $j$ may be expressed differently as we find that
 \[  \sum_{j=0}^{i}(-1)^j \binom{n_r}{j} \binom{n_l}{i-j} = \binom{n_l}{i} {}_2F_1(-i,-n_r; n_l -i+1;-1), \]
@@ -105,13 +105,13 @@ The last property we want to investigate is the relation
 \[ c_i = i^n (-1)^{n_l-i} c_{n-i} . \]
 On the left hand side, we have
 \begin{eqnarray}
-c_i&=& (-i)^i  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}  \sum_{j=0}^{i}(-1)^j \binom{n_r}{j} \binom{n_l}{i-j} ,
+    c_i&=& (-i)^i  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}  \sum_{j=0}^{i}(-1)^j \binom{n_r}{j} \binom{n_l}{i-j} ,
 \end{eqnarray}
 and on the right hand side
 \begin{eqnarray}
-c_{n-i}&=&  (-i)^{n-i} \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{n-i}}}    \sum_{j=0}^{n-i}(-1)^j \binom{n_r}{j} \binom{n_l}{n-i-j} , \\
-&=&  (-i)^{n-i}  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=n_l-i}^{n_r}(-1)^{n_r-j} \binom{n_r}{n_r-j} \binom{n_l}{n-i+j-n_r} , \\
-&=&  (-i)^{n-i} (-1)^{n_r}  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=n_l-i}^{n_r}(-1)^{j} \binom{n_r}{j} \binom{n_l}{i-j} ,
+    c_{n-i}&=&  (-i)^{n-i} \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{n-i}}}    \sum_{j=0}^{n-i}(-1)^j \binom{n_r}{j} \binom{n_l}{n-i-j} , \\
+    &=&  (-i)^{n-i}  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=n_l-i}^{n_r}(-1)^{n_r-j} \binom{n_r}{n_r-j} \binom{n_l}{n-i+j-n_r} , \\
+    &=&  (-i)^{n-i} (-1)^{n_r}  \sqrt{\frac{\binom{n}{n_r} }{2^n \binom{n}{i}}}    \sum_{j=n_l-i}^{n_r}(-1)^{j} \binom{n_r}{j} \binom{n_l}{i-j} ,
 \end{eqnarray}
 where in the second step we used the variable change $j'=n_r-j$ and in the last step simplified the expression. Aside from the phase, the only remaining difference is the borns of the sum but thanks to the binomial coefficients, that difference vanishes. Indeed, for both sums, the condition of having non zero terms is $\max\{ 0, i- n_l\} \le j \le \min\{ i,n_r \} $, so that all terms considered outside those limits are zero. Of course, we have $|c_i|=|c_{n-i}|$.
 
@@ -138,22 +138,22 @@ Just as we introduced $L_z$ in the two dimensional harmonic oscillator, we intro
 \[ \mathbf{L}^2 = \frac 1 2 (L_+ L_- + L_- L_+) + L_z^2, \]
 with
 \begin{eqnarray}
-L_+ &=& \hbar \sqrt 2 (a^\dagger_z a_l - a^\dagger_r a_z), \\ 
-L_- &=& \hbar \sqrt 2 (a^\dagger_l a_z - a^\dagger_z a_r). 
+    L_+ &=& \hbar \sqrt 2 (a^\dagger_z a_l - a^\dagger_r a_z), \\
+    L_- &=& \hbar \sqrt 2 (a^\dagger_l a_z - a^\dagger_z a_r).
 \end{eqnarray}
 
 It can be checked that $[H,\mathbf{L}^2]=0$ and $[L_z,\mathbf{L}^2]=0$ which implies there must be a common set of eigenstates for $H$, $L_z$ and $\mathbf{L}^2$ . Those eigenstates are the $\ket{\psi_{k,l,m}}$ states and have the following properties
 \begin{eqnarray}
-H \ket{\psi_{k,l,m}} &=& \hbar \omega(2k+l+\frac 3 2) \ket{\psi_{k,l,m}},\\
-L_z \ket{\psi_{k,l,m}} &=& \hbar m \ket{\psi_{k,l,m}},\\
-\mathbf{L}^2 \ket{\psi_{k,l,m}} &=& \hbar^2 l(l+1) \ket{\psi_{k,l,m}}, \\
-L_\pm \ket{\psi_{k,l,m}} &=& \hbar \sqrt{l(l+1)-m(m\pm1)} \ket{\psi_{k,l,m\pm1}}.\\
+    H \ket{\psi_{k,l,m}} &=& \hbar \omega(2k+l+\frac 3 2) \ket{\psi_{k,l,m}},\\
+    L_z \ket{\psi_{k,l,m}} &=& \hbar m \ket{\psi_{k,l,m}},\\
+    \mathbf{L}^2 \ket{\psi_{k,l,m}} &=& \hbar^2 l(l+1) \ket{\psi_{k,l,m}}, \\
+    L_\pm \ket{\psi_{k,l,m}} &=& \hbar \sqrt{l(l+1)-m(m\pm1)} \ket{\psi_{k,l,m\pm1}}.\\
 \end{eqnarray}
 
 The last relation implies that $m$ can take any integer value from $-l$ to $l$. So by repeatedly applying the $L_-$ operator on a $\ket{\psi_{k,l,l}}$ state, we should be able to generate all states down to $\ket{\psi_{k,l,-l}}$. The first step is to find the expression of the $\ket{\psi_{k,l,l}}$ in the $\ket{\varphi_{n_r,n_l,n_z}}$ basis using the particular property $L_+ \ket{\psi_{k,l,l}} = 0$. By identifying the quantum numbers we find
 \begin{eqnarray}
-n&=& n_r + n_l + n_z = 2k+ l, \\ 
-m &=& n_r - n_l.
+    n&=& n_r + n_l + n_z = 2k+ l, \\
+    m &=& n_r - n_l.
 \end{eqnarray}
 
 Since $n_r-n_l=m$ we can always write $n_r = K+m$, $n_r=K$ with $K$ a positive integer and therefore we must have $n_z=n-m-2K$, which cannot be negative hence we have $K \le \frac{n-m}{2}$.  We are now able to write
@@ -161,9 +161,9 @@ Since $n_r-n_l=m$ we can always write $n_r = K+m$, $n_r=K$ with $K$ a positive i
 since $\frac{n-l}{2} = k$ and with normalized coefficient $c_K$. The effect of $L_+$ on such a decomposition is
 \bea
 L_+ \ket{\psi_{k,l,l}} &=& \sum_{K=0}^k c_K \sqrt 2 \hbar \left( \sqrt{K} \sqrt{2k-2K+1} \ket{\varphi_{K+l, K-1,2k-2K+1}} \right. \nonumber \\
-&& \ - \left. \sqrt{K+l+1}\sqrt{2k-2K} \ket{\varphi_{K+l+1, K,2k-2K-1}} \right), 
+&& \ - \left. \sqrt{K+l+1}\sqrt{2k-2K} \ket{\varphi_{K+l+1, K,2k-2K-1}} \right),
 \eea
-which is zero if 
+which is zero if
 \[ c_K  \sqrt{K+l+1}\sqrt{2k-2K} = c_{K+1} \sqrt{K+1} \sqrt{2k-2K-1}. \]
 
 From that relation, we can express all $c_K$ in function of $c_0$ and then normalize all coefficient. We have
@@ -172,14 +172,14 @@ c_K^2 &=& c_0^2 \prod_{j=0}^{K-1} \frac{(j+l+1)(2k-2j)}{(j+1)(2k-2j-1)} ,\\
 &=& c_0^2 \frac{(l+1)(l+2)\ldots(l+K)(2k)(2k-2)\ldots(2k-2K+2)}{(1)(2)\ldots K (2k-1)(2k-3)\ldots(2k-2K+1)} ,\\
 &=& c_0^2 \frac{(l+K)!}{l!K! } \frac{(2k)!!}{(2k-2K)!!} \frac{(2k-2K-1)!!}{(2k-1)!!}, \\
 &=& c_0^2 \binom{l+K}{K} \frac{2^k k! }{2^{k-K}(k-K)! }\frac{(2k-2K)!}{2^{k-K}(k-K)! }\frac{2^{k}(k)! }{(2k)!}, \\
-&=& c_0^2 \,2^{2K}\,\frac{ \binom{l+K}{K} \binom{2k-2K}{k-K}  }{ \binom{2k}{k} }, 
+&=& c_0^2 \,2^{2K}\,\frac{ \binom{l+K}{K} \binom{2k-2K}{k-K}  }{ \binom{2k}{k} },
 \eea
 where $k!!$ is the double factorial of $k$ which has the property
 \bea
 (2k)!! &=&(2k)(2k-2)\ldots2 = k! 2^{k}, \\
 (2k+1)!! &=&(2k+1)(2k-1)\ldots1 = \frac{(2k)!}{k! 2^{k}},
 \eea
-that we used in the process. 
+that we used in the process.
 
 With that expression, we are now able to calculate the value of $c_0$ by normalizing the expression. We have
 \bea
