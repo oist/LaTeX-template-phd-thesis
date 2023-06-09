@@ -50,7 +50,7 @@
 		\renewcommand{\sectionmark}[1]{\markright{\thesection\; ##1}} % Getting the section name right
 		\fancyhead[RO,LE]{\thepage} % page number on the outside of headers
 		\setcounter{page}{2} % Include the title page in page counting
-		\thesisspacing % Double spacing
+		\thesisspacing % Single spacing
 	}
 
 	\newcommand{\includepublications}{}
@@ -61,7 +61,7 @@
 	
 	\RequirePackage[bf, font={onehalfspacing, sf, footnotesize}]{caption} % caption: FIG in bold, sans serif, 10pt, 1.5 line spacing in figure and table captions
 
-	\newcommand{\thesisspacing}{\doublespacing}
+	\newcommand{\thesisspacing}{\spacing{1.5}}
 
 	\newcommand{\numberedchapter}{ % Preparation for numbered chapters
 		\cleardoublepage % To make sure the previous headers are passed
@@ -82,7 +82,7 @@
 		\rhead{\thepage} % Page number at the right of the header
 		\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 		\setcounter{page}{2} % Include the title page in page counting
-		\thesisspacing % Double or single spacing
+		\thesisspacing % 1.5 x single spacing
 	}
 
 	\newcommand{\includepublications}{
