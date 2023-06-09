@@ -4,7 +4,7 @@
 %
 % Tadashi Kozuno (tadashi.kozuno@gmail.com)
 %
-% last revision: March 2019
+% last revision: June 2023
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{oist_thesis}[2019/3/17 OIST thesis submission class]
@@ -24,7 +24,7 @@
 	
 	\RequirePackage[a4paper, includehead, headheight=0.6cm, inner=3cm ,outer=2.5cm, top=2.5 cm, bottom=2.5cm]{geometry}  % Changing size of document
 	
-	\RequirePackage[bf]{caption} % caption: FIG in bold
+	\RequirePackage[bf, font={sf, footnotesize}]{caption} % caption: FIG in bold, sans serif, 10pt
 	\RequirePackage{emptypage} % Remove headers of empty pages
 
 	\newcommand{\thesisspacing}{\singlespacing}
@@ -59,7 +59,7 @@
 	
 	\RequirePackage[a4paper, includehead, headheight=0.6cm, inner=2.5cm ,outer=2.5cm, top=2.5 cm, bottom=2.5cm]{geometry}
 	
-	\RequirePackage[bf, font=onehalfspacing]{caption} % caption: FIG in bold, 1.5 line spacing in figure and table captions
+	\RequirePackage[bf, font={onehalfspacing, sf, footnotesize}]{caption} % caption: FIG in bold, sans serif, 10pt, 1.5 line spacing in figure and table captions
 
 	\newcommand{\thesisspacing}{\doublespacing}
 

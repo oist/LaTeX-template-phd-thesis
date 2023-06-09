@@ -5,6 +5,8 @@
 %
 % Original author:
 % Jeremie Gillet
+% Contributors:
+% Fabian Hillebrand
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,6 +33,16 @@
 \usepackage{pdfpages} % To include a pdf files of your published papers as an appendix
 \usepackage{fancyhdr} % For the headers
 \usepackage{hyperref} % Adds clickable links at references
+\usepackage{times} % For Times New Roman (deprecated but retains maths font)
+\usepackage{helvet} % For Helvetica (equivalent)
+
+% Force table font to be 10pt and sans serif
+\makeatletter
+\renewenvironment{table}%
+  {\renewcommand\familydefault\sfdefault
+   \@float{table}\footnotesize}
+  {\end@float}
+\makeatother
 
 %----------------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
