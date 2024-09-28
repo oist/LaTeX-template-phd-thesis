@@ -29,6 +29,7 @@
 \usepackage{longtable} % tables that can span several pages
 \usepackage[hidelinks]{hyperref} % Adds clickable links at references
 \usepackage{indentfirst} % Indent first paragraph after a section
+\usepackage[titletoc]{appendix} % Display "Appendix A" in table of contents
 
 %----------------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
@@ -160,10 +161,11 @@
 %-------------------------------------------------------------------------------
 
 \appendix
-\addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}} % Add title to TOC
 
+\begin{appendices}
 \input{MainText/appendixA}
 %\input{MainText/appendixB}
 %\input{MainText/appendixC}
+\end{appendices}
 
 \end{document}
