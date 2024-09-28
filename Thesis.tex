@@ -29,7 +29,6 @@
 \usepackage{setspace} % For using single or double spacing
 \usepackage{longtable} % tables that can span several pages
 \usepackage{pdfpages} % To include a pdf files of your published papers as an appendix
-\usepackage{fancyhdr} % For the headers
 \usepackage[hidelinks]{hyperref} % Adds clickable links at references
 \usepackage{indentfirst} % Indent first paragraph after a section
 
@@ -141,7 +140,6 @@
 \unnumberedchapter{Introduction} % Title of the unnumbered chapter
 \input{MainText/introduction} % Introduction (unnumbered)
 
-\numberedchapter % Regular chapters following
 \input{MainText/chapter1} % Input your chapters here
 \input{MainText/chapter2}
 \input{MainText/chapter3}
@@ -166,7 +164,6 @@
 \appendix
 \addtocontents{toc}{\protect\contentsline{chapter}{Appendices}{}{}} % Add title to TOC
 
-\numberedchapter % Regular chapters following
 \input{MainText/appendixA}
 %\input{MainText/appendixB}
 %\input{MainText/appendixC}
