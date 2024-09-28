@@ -30,13 +30,9 @@
 \if@final
     \RequirePackage[font={sf, small}, labelfont=bf]{caption} % caption: FIG in bold, so spacing in tables
 	\newcommand{\thesisspacing}{\singlespacing}
-	\newcommand{\includepublications}{}
 \else
 	\RequirePackage[font={onehalfspacing, sf, small}, labelfont=bf]{caption} % caption: FIG in bold, so spacing in tables, 1.5 line spacing in figure and table captions
 	\newcommand{\thesisspacing}{\doublespacing}
-	\newcommand{\includepublications}{
-		\input{./MainText/publications}
-	}
 \fi
 
 \newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
