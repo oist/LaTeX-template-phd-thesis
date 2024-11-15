@@ -13,15 +13,10 @@ If you want to build the thesis by hand, you may use the series of commands
 
 ```bash
 pdflatex Thesis.tex
-for aux_file in *.aux
-do
-  bibtex $aux_file
-done
+bibtex Thesis.aux
 pdflatex Thesis.tex
 pdflatex Thesis.tex
 ```
-
-The for loop is due to the possible presence of of a second bibliography for the thesis by publication.
 
 ## updating the template
 

@@ -67,13 +67,10 @@
 %\bibliographystyle{Preamble/physics_bibstyle} % You may use a different style adapted to your field
 \bibliographystyle{abbrvnat} % You may use a different style adapted to your field
 
-%-------------------------------------------------------------------------------
-%	FOR THESIS BY PUBLICATION ONLY (delete section otherwise)
-%-------------------------------------------------------------------------------
-
-\usepackage[resetlabels]{multibib}
-\newcites{OIST}{List of Publications} % Create separate bibliography for your publications
-\bibliographystyleOIST{abbrvnat} % You may use a different style adapted to your field
+% For thesis by publication only, can be deleted otherwise
+\usepackage{bibentry} % to show standalone bibliography entries
+% For thesis by publication only, can be deleted otherwise
+\nobibliography* % use the standard bibliography and bibliography style
 
 %-------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -103,14 +100,7 @@
 \input{Preamble/glossary}
 \input{Preamble/nomenclature}
 \input{Preamble/dedication}
-
-%-------------------------------------------------------------------------------
-%	FOR THESIS BY PUBLICATION ONLY (delete section otherwise)
-%-------------------------------------------------------------------------------
-
-\unnumberedchapter{List of Publications} % Title of the unnumbered chapter
-\nociteOIST{*} % Include all citations from Preamble/Thesis_publications.bib in order
-\bibliographyOIST{Preamble/Thesis_publications} % The references are in "Preamble/Thesis_publications.bib"
+\input{Preamble/list_of_publications}
 
 %-------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES
