@@ -28,10 +28,10 @@
 \titlespacing{\chapter}{0pt}{0pt}{20pt} % 0 left, 0 top, 20 bottom
 
 \if@final
-    \RequirePackage[font={sf, small}, labelfont=bf]{caption} % caption: FIG in bold, so spacing in tables
+    \RequirePackage[font={sf, small}, labelfont=bf, singlelinecheck=no]{caption} % caption: FIG in bold, so spacing in tables
 	\newcommand{\thesisspacing}{\singlespacing}
 \else
-	\RequirePackage[font={onehalfspacing, sf, small}, labelfont=bf]{caption} % caption: FIG in bold, so spacing in tables, 1.5 line spacing in figure and table captions
+	\RequirePackage[font={onehalfspacing, sf, small}, labelfont=bf, singlelinecheck=no]{caption} % caption: FIG in bold, so spacing in tables, 1.5 line spacing in figure and table captions
 	\newcommand{\thesisspacing}{\doublespacing}
 \fi
 
