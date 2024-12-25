@@ -20,11 +20,11 @@
 %-------------------------------------------------------------------------------
 
 \LoadClass[12pt, oneside]{book} % 12 pt font, one-sided book style
-	
+
 \RequirePackage[a4paper, inner=3cm ,outer=2.5cm, top=2.4cm, bottom=2.5cm]{geometry}  % Changing size of document
 
 \usepackage{titlesec} % To move the chapter title up
-\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\LARGE}
 \titlespacing{\chapter}{0pt}{0pt}{20pt} % 0 left, 0 top, 20 bottom
 
 \if@final
