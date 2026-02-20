@@ -47,6 +47,13 @@
 	\thesisspacing % Double or single spacing
 }
 
+% Be strict about what counts as "overfull"
+\hfuzz=0pt
+\vfuzz=0pt
+
+% Make overfull lines visible in the PDF margin (set 0pt to disable)
+\overfullrule=5pt
+
 %-------------------------------------------------------------------------------
 %	BUILDING THE TITLE PAGE
 %-------------------------------------------------------------------------------
