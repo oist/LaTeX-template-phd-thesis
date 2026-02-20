@@ -25,6 +25,7 @@ Refer to figure like this: Figure~\ref{fig-example} or this (Fig.~\ref{fig-examp
 \begin{table}
     \center
     \caption{Short heading for the List of Tables.}
+    \caption*{Full caption with all the details here.}
     \begin{tabular}{c|c}
         Parameter    & Value  \\ \hline \hline
         $\Delta$     & 0, 150 \\
@@ -34,10 +35,10 @@ Refer to figure like this: Figure~\ref{fig-example} or this (Fig.~\ref{fig-examp
         ${\gamma}$   & 0.2
     \end{tabular}
     \label{tab-values}
-    \caption*{Full caption with all the details here.}
 \end{table}
 
 \begin{table} \center
+    \caption*{This secret table won't be numbered and won't appear in the List of Figures because of the * }
     \begin{tabular}{c|c}
         Parameter    & Value   \\ \hline \hline
         $\Delta$     & 0, 1500 \\
@@ -46,7 +47,6 @@ Refer to figure like this: Figure~\ref{fig-example} or this (Fig.~\ref{fig-examp
         ${\kappa}$   & 68      \\
         ${\gamma}$   & 2
     \end{tabular}
-    \caption*{This secret table won't be numbered and won't appear in the List of Figures because of the * }
 \end{table}
 
 

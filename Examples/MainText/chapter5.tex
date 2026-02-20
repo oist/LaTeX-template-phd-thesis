@@ -248,6 +248,7 @@ Here, we discuss the numerical methods used to calculate the following results. 
 
 \begin{table} \begin{center}
         \caption{Numerical values of the model. }
+        \caption*{Numerical values used in the numerical processes, unless stated otherwise. }
         \begin{tabular}{c|c}
             Parameter    & Value ($\times 2 \pi$~MHz) \\ \hline \hline
             $\Delta$     & 0, 150                     \\
@@ -257,12 +258,12 @@ Here, we discuss the numerical methods used to calculate the following results. 
             ${\gamma}$   & 0.2
         \end{tabular}
         \label{tab-values}
-        \caption*{Numerical values used in the numerical processes, unless stated otherwise. }
     \end{center}\end{table}
 
 
 \begin{table} \begin{center}
         \caption{Other numerical values of the model. }
+        \caption*{Numerical values used in the numerical processes, unless stated otherwise. Totally different from the previous table}
         \begin{tabular}{c|c}
             Parameter    & Value ($\times 2 \pi$~MHz) \\ \hline \hline
             $\Delta$     & 0, 150                     \\
@@ -272,7 +273,6 @@ Here, we discuss the numerical methods used to calculate the following results. 
             ${\gamma}$   & 0.2
         \end{tabular}
         \label{tab-values2}
-        \caption*{Numerical values used in the numerical processes, unless stated otherwise. Totally different from the previous table}
     \end{center}\end{table}
 
 Our goal in this chapter is to highlight the two-photon processes, which are proportional to $\epsilon^4$, compared to the one-photon processes, proportional to $\epsilon^2$ in the perturbation regime. With that in mind, it makes sense to choose a high laser power in order to increase the visibility of the two-photon transitions. However, as the strength of the laser probing the system is increased, more and more excitation modes are being populated and for numerical purposes we cannot use an infinite vector basis for the photon number $\ket{N}$. Therefore, we need to make approximations in order to solve the master equation by cutting off the excitation number to a maximum $n_{\mbox{max}}$. Unfortunately, with a truncated basis for high laser power the populations come numerically to a saturation and harmonization of all the different populations in the density matrix. We need a way to evaluate this effect in order to chose a laser power as high as possible which still minimizes numerical errors.
