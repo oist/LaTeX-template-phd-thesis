@@ -70,6 +70,14 @@ Structures the style for the main text chapters and builds them.
 
 The command \texttt{\textbackslash numberedchapter} is only relevant for a transition between unnumbered sections and numbered sections, it does not need to be included between each chapter.
 
+\subsection{OVERFULL LINES}
+
+\LaTeX\ should warn you at compile time of overfull lines, with messages along the lines of \texttt{Overfull \textbackslash hbox (14.45969pt too wide) in paragraph at lines 5--151}.
+You should always address those warnings and fix the issues, usually by adding a \texttt{\textbackslash -} inside a word to indicate that it can be split at that point.
+To make the issue more obvious, the template will add a thick black line wherever this happens, you might see several in this document.
+
+In general, the final document should compile without any warnings or errors.
+
 \subsection{BIBLIOGRAPHY}
 
 Includes the bibliography.
