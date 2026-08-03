@@ -3,9 +3,9 @@
 LaTeX Template for OIST Thesis
 
 All instructions are specified within the templates themselves.
-Contact the Examination team (examination@oist.jp) for any questions related to the templates.
-
-If you would like to suggest a change, PRs are welcome.
+Please refer to the Academic Program Policy for specifics regarding the format. While this is the final template, it is not technically supported by the Graduate School.
+For questions on how to use LaTeX, please reach out to your Student Council.
+For questions regarding the format of the thesis, please reach out to the Examinations Team (examination[at]oist.jp)
 
 ## building the thesis
 
